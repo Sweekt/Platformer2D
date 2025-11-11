@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=4 uid="uid://8qcjy33o1xo5"]
+[gd_scene load_steps=6 format=4 uid="uid://8qcjy33o1xo5"]
 
 [ext_resource type="TileSet" uid="uid://b5qow2h02wp5j" path="res://Sprites/Tiles/Mossy Tileset/mossy.tres" id="1_vk57k"]
 [ext_resource type="Texture2D" uid="uid://de60fy4ryef2l" path="res://Sprites/Backgrounds/unnamed.jpg" id="1_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://d132ymulhu06x" path="res://Scenes/enemy.tscn" id="3_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://dustfy11i8cn7" path="res://Scenes/player.tscn" id="3_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://c2cri0bdle7yb" path="res://Scenes/collectible.tscn" id="5_6444e"]
 
 [node name="Main" type="Node2D"]
 
@@ -10,14 +12,28 @@
 position = Vector2(-31.999998, 1041)
 scale = Vector2(5.2968755, 5.2968755)
 texture = ExtResource("1_xfk5q")
+metadata/_edit_lock_ = true
 
-[node name="Player" parent="." instance=ExtResource("3_xfk5q")]
-position = Vector2(764, 406)
+[node name="Enemy" parent="." instance=ExtResource("3_7p6j4")]
+position = Vector2(832, 680)
+move_direction = Vector2(1600, 0)
+move_speed = 100.0
+
+[node name="Enemy2" parent="." instance=ExtResource("3_7p6j4")]
+position = Vector2(-992, 320)
+move_direction = Vector2(192, 0)
+move_speed = 100.0
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("3_xfk5q")]
+position = Vector2(-528, 0)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(0.7, 0.7)
 tile_map_data = PackedByteArray("AAD7/wAAAAAAAAAAAAD7/wEAAAAFAAEAAAD8/wEAAAAEAAEAAAD9/wEAAAABAAAAAAD+/wAAAAADAAAAAAD+/wEAAAABAAUAAAD+/wIAAAAEAAEAAAD+/wMAAAABAAEAAAD9/wMAAAABAAEAAAD8/wMAAAABAAEAAAD7/wMAAAABAAEAAAD6/wMAAAABAAEAAAD5/wMAAAABAAEAAAD5/wIAAAABAAEAAAD5/wEAAAABAAAAAAD6/wEAAAABAAAAAAD6/wIAAAABAAEAAAD7/wIAAAABAAEAAAD8/wIAAAABAAEAAAD9/wIAAAABAAEAAAD//wIAAAABAAAAAAAAAAIAAAABAAAAAAABAAIAAAAGAAAAAAABAAMAAAABAAEAAAAAAAMAAAABAAEAAAD//wMAAAABAAEAAAACAAMAAAABAAEAAAADAAMAAAABAAEAAAAEAAMAAAABAAEAAAADAAIAAAABAAAAAAD8/wAAAAABAAUAAAD8////AAADAAAAAAABAAEAAAADAAAAAAACAAIAAAABAAAAAAAEAAIAAAABAAAAAAAFAAIAAAABAAAAAAAFAAMAAAABAAEAAAD4/wMAAAAAAAEAAAD4/wIAAAAAAAEAAAD4/wEAAAAAAAUAAAD4/wAAAAADAAEAAAD4////AAADAAEAAAD4//7/AAADAAEAAAD4//3/AAADAAEAAAD4//z/AAAAAAQAAAD5//z/AAACAAIAAAD4//v/AAAAAAAAAAD5//v/AAACAAQAAAD6//v/AAABAAMAAAD7//v/AAADAAQAAAD7//z/AAAAAAIAAAD8//z/AAABAAIAAAD9//z/AAABAAIAAAD+//z/AAABAAIAAAD///z/AAACAAIAAAD///v/AAACAAQAAAAAAPv/AAABAAMAAAD+//v/AAABAAAAAAD9//v/AAABAAAAAAD8//v/AAABAAAAAAABAPv/AAABAAMAAAACAPv/AAABAAMAAAADAPv/AAABAAMAAAAEAPv/AAABAAMAAAAFAPv/AAABAAMAAAD4/wQAAAAAAAIAAAD5/wQAAAABAAIAAAD8/wQAAAABAAIAAAD9/wQAAAABAAIAAAD+/wQAAAABAAIAAAD//wQAAAABAAIAAAAAAAQAAAABAAIAAAABAAQAAAABAAIAAAACAAQAAAABAAIAAAADAAQAAAABAAIAAAAEAAQAAAABAAIAAAAFAAQAAAABAAIAAAD7/wQAAAABAAIAAAD6/wQAAAABAAIAAAAGAPv/AAABAAMAAAAHAPv/AAAGAAQAAAAHAPz/AAADAAEAAAAHAP3/AAADAAEAAAAHAP7/AAADAAEAAAAHAP//AAADAAEAAAAHAAAAAAADAAEAAAAHAAEAAAADAAEAAAAHAAIAAAABAAUAAAAHAAMAAAACAAEAAAAHAAQAAAACAAIAAAAGAAQAAAABAAIAAAAGAAMAAAABAAEAAAAGAAIAAAABAAAAAAA=")
 tile_set = ExtResource("1_vk57k")
+metadata/_edit_lock_ = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.25, 0.25)
+[node name="Collectible" parent="." instance=ExtResource("5_6444e")]
+
+[node name="Collectible2" parent="." instance=ExtResource("5_6444e")]
+position = Vector2(1024, -8)

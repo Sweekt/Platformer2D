@@ -1,7 +1,3 @@
-Absolument ! Voici une structure de base pour un fichier **README.md** bien organisé pour votre projet de Metroidvania 2D sur Godot, avec un ton adapté à un projet de formation.
-
----
-
 ## 🍄 Godot Metroidvania : Le Mystère de la Mousse 🌿
 
 ### Présentation du Projet

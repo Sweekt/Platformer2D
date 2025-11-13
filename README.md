@@ -1,5 +1,7 @@
 🍄 Godot Metroidvania : Le Mystère de la Mousse 🌿
+
 Présentation du Projet
+
 Ce projet est un jeu d'aventure Metroidvania 2D développé avec le moteur de jeu Godot Engine (version 4.x).
 
 L'objectif principal de ce projet est de servir de support de formation et d'apprentissage pour maîtriser les concepts clés de Godot, tels que :
